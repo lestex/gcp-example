@@ -1,4 +1,3 @@
-
 terraform {
   backend "gcs" {
     bucket = "terraform-248411-state-test"
@@ -30,5 +29,8 @@ module "gcs-bucket" {
 module "jenkins" {
   source = "./jenkins"
 
-  project_id = var.project_id
+  project_id                      = var.project_id
+  region                          = var.region
+  google_storage_bucket_artifacts = module.gcs-bucket.bucket_name
+  network                         = module.vpc-network.network_name
 }

@@ -16,3 +16,8 @@ output "subnets_self_links" {
 output "bucket_name" {
   value = module.gcs-bucket.bucket_name
 }
+
+
+output "jenkins-image" {
+  value = "${module.jenkins.jenkins-image}"
+}
