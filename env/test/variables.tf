@@ -5,6 +5,6 @@ variable "region" {
   default = "us-east1"
 }
 
-variable "network_name" {
+variable "prefix" {
   default = "test-env"
 }

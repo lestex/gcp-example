@@ -12,3 +12,7 @@ output "subnets_self_links" {
   value       = module.vpc-network.subnets_self_links
   description = "The self-links of subnets being created"
 }
+
+output "bucket_name" {
+  value = module.gcs-bucket.bucket_name
+}

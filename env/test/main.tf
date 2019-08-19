@@ -14,7 +14,21 @@ provider "google" {
 }
 
 module "vpc-network" {
-  source       = "./network"
+  source = "./network"
+
   project_id   = var.project_id
-  network_name = var.network_name
+  network_name = var.prefix
+}
+
+module "gcs-bucket" {
+  source = "./gcs"
+
+  project_id    = var.project_id
+  bucket_prefix = var.prefix
+}
+
+module "jenkins" {
+  source = "./jenkins"
+
+  project_id = var.project_id
 }
