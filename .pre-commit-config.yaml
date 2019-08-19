@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.0.9
+    hooks:
+      - id: terraform-fmt
+      - id: shellcheck
+      - id: gofmt
+      - id: golint

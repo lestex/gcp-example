@@ -1,0 +1,5 @@
+account.json
+vendor/
+terraform.tfstate
+.terraform
+terraform.tfvars

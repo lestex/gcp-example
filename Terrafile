@@ -1,0 +1,9 @@
+terraform-google-network:
+    source:  "git@github.com:terraform-google-modules/terraform-google-network"
+    version: "v1.1.0"
+terraform-google-kubernetes-engine:
+    source:  "git@github.com:terraform-google-modules/terraform-google-kubernetes-engine"
+    version: "v4.1.0"
+terraform-google-jenkins:
+    source:  "git@github.com:terraform-google-modules/terraform-google-jenkins"
+    version: "v0.1.0"
