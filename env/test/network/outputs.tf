@@ -9,6 +9,6 @@ output "network_self_link" {
 }
 
 output "subnets_self_links" {
-  value       = module.vpc-network.subnetwork.*.self_link
+  value       = module.vpc-network.subnets_self_links
   description = "The self-links of subnets being created"
 }

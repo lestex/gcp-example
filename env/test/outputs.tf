@@ -8,7 +8,7 @@ output "vpc-network-self_link" {
   description = "The URI of the VPC being created"
 }
 
-# output "subnets_self_links" {
-#   value       = module.vpc-network.subnets_self_links
-#   description = "The self-links of subnets being created"
-# }
+output "subnets_self_links" {
+  value       = module.vpc-network.subnets_self_links
+  description = "The self-links of subnets being created"
+}
