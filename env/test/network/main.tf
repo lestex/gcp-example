@@ -4,7 +4,8 @@ locals {
 }
 
 module "vpc-network" {
-  source       = "../../../vendor/modules/terraform-google-network"
+  source = "git::https://github.com/terraform-google-modules/terraform-google-network.git?ref=v1.1.0"
+  # version = "v1.1.0"
   project_id   = var.project_id
   network_name = var.network_name
 

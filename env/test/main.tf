@@ -1,7 +1,10 @@
 terraform {
-  backend "gcs" {
-    bucket = "terraform-248411-state-test"
-    prefix = "terraform/state"
+  backend "remote" {
+    organization = "leandevops"
+
+    workspaces {
+      name = "test_env_network"
+    }
   }
   required_version = "~> 0.12.0"
 }
@@ -19,19 +22,19 @@ module "vpc-network" {
   network_name = var.prefix
 }
 
-module "gcs-bucket" {
-  source = "./gcs"
+# module "gcs-bucket" {
+#   source = "./gcs"
 
-  project_id    = var.project_id
-  bucket_prefix = var.prefix
-}
+#   project_id    = var.project_id
+#   bucket_prefix = var.prefix
+# }
 
-module "jenkins" {
-  source = "./jenkins"
+# module "jenkins" {
+#   source = "./jenkins"
 
-  project_id                      = var.project_id
-  region                          = var.region
-  google_storage_bucket_artifacts = module.gcs-bucket.bucket_name
-  network                         = module.vpc-network.network_name
-  subnetwork                      = module.vpc-network.subnets_self_links[0]
-}
+#   project_id                      = var.project_id
+#   region                          = var.region
+#   google_storage_bucket_artifacts = module.gcs-bucket.bucket_name
+#   network                         = module.vpc-network.network_name
+#   subnetwork                      = module.vpc-network.subnets_self_links[0]
+# }
