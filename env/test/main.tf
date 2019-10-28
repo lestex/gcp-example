@@ -1,12 +1,12 @@
 terraform {
-  backend "remote" {
-    organization = "leandevops"
-
-    workspaces {
-      name = "test_env_network"
-    }
-  }
   required_version = "~> 0.12.0"
+#   backend "remote" {
+#     organization = "leandevops"
+
+#     workspaces {
+#       name = "test_env_network"
+#     }
+#   }
 }
 
 provider "google" {
